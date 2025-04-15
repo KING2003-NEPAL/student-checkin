@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="5">
+    <title>Student Check-In Dashboard</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Check-In Dashboard</h1>
+
+    {% if records %}
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Student Number</th>
+                <th>BI Number</th>
+            </tr>
+            {% for record in records %}
+            <tr>
+                <td>{{ record['Name'] }}</td>
+                <td>{{ record['Student Number'] }}</td>
+                <td>{{ record['BI Number'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No students have checked in yet.</p>
+    {% endif %}
+</body>
+</html>
