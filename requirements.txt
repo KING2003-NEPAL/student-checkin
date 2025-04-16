@@ -1,4 +1,4 @@
 flask
 pymysql
 pandas
-
+qrcode[pil]
